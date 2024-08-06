@@ -17,8 +17,7 @@ To use the OpenAI Connector, you must have access to the OpenAI API through a [O
 <img src=https://raw.githubusercontent.com/G5andeepD/module-ballerinax-openai-images/docs/docs/setup/resources/api-key-dashboard.png alt="Twitter Developer Portal" style="width: 70%;">
 
 3. Click on the "Create new secret key" button
-<img src=https://raw.githubusercontent.com/G5andeepD/module-ballerinax-openai-images/docs/docs/setup/resources/create-new-secrete-key.png alt="Twitter Developer Portal" style="width: 70%;">
-
+    <img src=https://raw.githubusercontent.com/G5andeepD/module-ballerinax-openai-images/docs/docs/setup/resources/create-new-secrete-key.png alt="Twitter Developer Portal" style="width: 70%;">
 4. Fill the details and click on Create secret key
 <img src=https://raw.githubusercontent.com/G5andeepD/module-ballerinax-openai-images/docs/docs/setup/resources/saved-key.png alt="Twitter Developer Portal" style="width: 70%;">
 
@@ -28,7 +27,73 @@ To use the OpenAI Connector, you must have access to the OpenAI API through a [O
 
 ## Quickstart
 
-[//]: # (TODO: Add a quickstart guide to demonstrate a basic functionality of the module, including sample code snippets.)
+To use the `OpenAI Images` connector in your Ballerina application, update the `.bal` file as follows:
+
+### Step 1: Import the module
+
+Import the `openai-images` module.
+
+```ballerina
+import ballerinax/openai-images;
+```
+
+### Step 2: Instantiate a new connector
+
+1. Create a `Config.toml` file and, configure the obtained credentials in the above steps as follows:
+
+```bash
+token = "<Access Token>"
+```
+
+2. Create a `twitter:ConnectionConfig` with the obtained access token and initialize the connector with it.
+
+```ballerina
+configurable string token = ?;
+
+final openai-images:Client openai = check new({
+    auth: {
+        token
+    }
+});
+```
+
+### Step 3: Invoke the connector operation
+
+Now, utilize the available connector operations.
+
+#### Generate a image
+
+```ballerina
+public function main() returns error? {
+
+    CreateImageRequest request = { 
+
+        prompt: "A cute baby sea otter",        
+        model: "dall-e-3",
+        n: 1,
+        size: "1024x1024",
+        response_format: "url"        
+    };
+
+    // Call the `post images/generations` resource to generate an image
+
+    var response = openai->/images/generations.post(request);
+
+    if (response is ImagesResponse) {
+        io:println("Created images: ", response.data);
+    } else {
+        io:println("Error: ", response);
+    }
+
+    return;
+}
+```
+
+### Step 4: Run the Ballerina application
+
+```bash
+bal run
+```
 
 ## Examples
 
