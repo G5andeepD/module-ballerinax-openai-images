@@ -2,7 +2,7 @@
 
 [OpenAI](https://openai.com/), an AI research organization focused on creating friendly AI for humanity, offers the [OpenAI API](https://platform.openai.com/docs/api-reference/introduction) to access its powerful AI models for tasks like natural language processing and image generation.
 
-The `ballarinax/openai-images` package offers APIs to connect and interact with [Image related endpoints of OpenAI API](https://platform.openai.com/docs/api-reference/images/create) providing access to the new DALL.E models developed by OpenAI for various image-related tasks.
+The `ballarinax/openai_images` package offers APIs to connect and interact with [Image related endpoints of OpenAI API](https://platform.openai.com/docs/api-reference/images/create) providing access to the new DALL.E models developed by OpenAI for various image-related tasks.
 
 ## Setup guide
 
@@ -32,10 +32,10 @@ To use the `OpenAI Images` connector in your Ballerina application, update the `
 
 ### Step 1: Import the module
 
-Import the `openai-images` module.
+Import the `openai_images` module.
 
 ```ballerina
-import ballerinax/openai-images;
+import ballerinax/openai_images;
 ```
 
 ### Step 2: Instantiate a new connector
@@ -51,7 +51,7 @@ token = "<Access Token>"
 ```ballerina
 configurable string token = ?;
 
-final openai-images:Client openai = check new({
+final openai_images:Client openai = check new({
     auth: {
         token
     }
@@ -67,7 +67,7 @@ Now, utilize the available connector operations.
 ```ballerina
 public function main() returns error? {
 
-    CreateImageRequest request = { 
+    openai_images:CreateImageRequest request = { 
         prompt: "A cute baby sea otter",        
         model: "dall-e-3",
         n: 1,
