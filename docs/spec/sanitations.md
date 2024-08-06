@@ -7,7 +7,7 @@ _Edition_: Swan Lake
 
 This document records the sanitation done on top of the official OpenAPI specification from OpenAI. The OpenAPI specification is obtained from the [OpenAI OpenAPI Documentation](https://github.com/openai/openai-openapi/blob/master/openapi.yaml). These changes are implemented to enhance the overall usability and readability of the generated client.
 
-1. **Removed the `default:null` property of certain schemas**:
+1. **Removed the `default:null` property from the below schemas**:
 
    - **Changed Schemas**: `CreateCompletionRequest`,`ChatCompletionStreamOptions`,`CreateChatCompletionRequest`
 
