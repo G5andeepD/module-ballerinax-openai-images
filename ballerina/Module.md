@@ -14,13 +14,13 @@ To use the OpenAI Connector, you must have access to the OpenAI API through a [O
 
 
 2. Navigate to Dashboard -> API keys
-<img src=https://raw.githubusercontent.com/G5andeepD/module-ballerinax-openai-images/docs/docs/setup/resources/api-key-dashboard.png alt="Twitter Developer Portal" style="width: 70%;">
+<img src=https://raw.githubusercontent.com/G5andeepD/module-ballerinax-openai-images/docs/docs/setup/resources/api-key-dashboard.png alt="OpenAI Platform" style="width: 70%;">
 
 3. Click on the "Create new secret key" button
-<img src=https://raw.githubusercontent.com/G5andeepD/module-ballerinax-openai-images/docs/docs/setup/resources/create-new-secrete-key.png alt="Twitter Developer Portal" style="width: 70%;">
+<img src=https://raw.githubusercontent.com/G5andeepD/module-ballerinax-openai-images/docs/docs/setup/resources/create-new-secrete-key.png alt="OpenAI Platform" style="width: 70%;">
 
 4. Fill the details and click on Create secret key
-<img src=https://raw.githubusercontent.com/G5andeepD/module-ballerinax-openai-images/docs/docs/setup/resources/saved-key.png alt="Twitter Developer Portal" style="width: 70%;">
+<img src=https://raw.githubusercontent.com/G5andeepD/module-ballerinax-openai-images/docs/docs/setup/resources/saved-key.png alt="OpenAI Platform" style="width: 70%;">
 
 5. Store the API key securely to use in your application 
 
