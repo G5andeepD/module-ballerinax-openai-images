@@ -51,17 +51,17 @@ import ballerinax/openai_images;
 1. Create a `Config.toml` file and, configure the obtained credentials in the above steps as follows:
 
 ```bash
-token = "<Access Token>"
+apiKey = "<API Key>"
 ```
 
-2. Create a `twitter:ConnectionConfig` with the obtained access token and initialize the connector with it.
+2. Create a `openai_images:ConnectionConfig` with the obtained API Key and initialize the connector with it.
 
 ```ballerina
-configurable string token = ?;
+configurable string apiKey = ?;
 
 final openai_images:Client openai = check new({
     auth: {
-        token
+        apiKey
     }
 });
 ```
